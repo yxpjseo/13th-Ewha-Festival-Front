@@ -42,7 +42,7 @@ const BoothListContent = () => {
       return undefined;
     },
     getTotalCount: page => page.data.booth_count || 0,
-    getItems: page => page.data.booth.results || [],
+    getItems: page => page.data.booth?.results || [],
     type: 'booth'
   });
 
