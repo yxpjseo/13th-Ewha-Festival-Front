@@ -40,7 +40,7 @@ const Signpost = () => {
     <SignpostWrapper>
       <Pole />
       {signs.map((sign, index) => (
-        <SignWrapper key={index} index={index} isLeft={index % 2 === 0}>
+        <SignWrapper key={index} $index={index} $isLeft={index % 2 === 0}>
           <Sign
             korean={sign.korean}
             english={sign.english}
@@ -65,11 +65,11 @@ const SignpostWrapper = styled.div`
 
 const SignWrapper = styled.div`
   position: absolute;
-  top: ${({ index }) => 10 + index * 16}%;
+  top: ${({ $index }) => 10 + $index * 16}%;
   z-index: 3;
 
-  ${({ isLeft }) =>
-    isLeft
+  ${({ $isLeft }) =>
+    $isLeft
       ? 'right: 85%; transform: translateX(100%);'
       : 'left: 85%; transform: translateX(-100%);'}
 `;
